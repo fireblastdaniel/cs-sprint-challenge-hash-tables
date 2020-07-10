@@ -9,6 +9,17 @@ def reconstruct_trip(tickets, length):
     """
     YOUR CODE HERE
     """
-    # Your code here
+    # pass through once to make a hashtable
+    ticket_dict = {}
+    for i in range(length):
+        ticket_dict[tickets[i].source] = tickets[i].destination
+
+    # make output array
+    route = []
+    current = ticket_dict["NONE"]
+    while current != "NONE":
+        route.append(current)
+        current = ticket_dict[current]
+    route.append(current)
 
     return route
