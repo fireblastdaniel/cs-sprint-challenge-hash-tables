@@ -2,7 +2,16 @@ def intersection(arrays):
     """
     YOUR CODE HERE
     """
-    # Your code here
+    current = { i : None for i in arrays[0] }
+
+    for arr in range(1, len(arrays)):
+        next_set = {}
+        for item in arrays[arr]:
+            if item in current:
+                next_set[item] = None
+        current = next_set
+
+    result = [*current.keys()]
 
     return result
 
